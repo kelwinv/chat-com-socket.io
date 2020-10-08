@@ -9,7 +9,7 @@ import socketController from './Controllers/socketController';
 const port = process.env.PORT || 3333;
 const app = exprees();
 const server = http.createServer(app);
-const io = socketIo(server);
+export const io = socketIo(server);
 
 app.use(router);
 
