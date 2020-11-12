@@ -1,6 +1,7 @@
 import exprees from 'express';
 import http from 'http';
 import socketIo from 'socket.io';
+import cors from 'cors';
 
 import router from './routes';
 
@@ -11,6 +12,7 @@ const app = exprees();
 const server = http.createServer(app);
 export const io = socketIo(server);
 
+app.use(cors())
 app.use(router);
 
 io.on("connection", socketController.connetion);
